@@ -38,7 +38,10 @@ class ScratchSimpleGamepad {
             return // not a new polling cycle
         this.currentMSecs = this.runtime.currentMSecs
         var gamepads = navigator.getGamepads()
-        
+
+        var usb = USB.getDevices();
+        console.log(usb);
+
         if (gamepads == null || gamepads.length == 0 || gamepads[0] == null) {
             // different number of buttons, so new gamepad
             this.previousButtons = []
